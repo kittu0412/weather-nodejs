@@ -8,7 +8,7 @@ const forecast = (latitude,longitude,callback) => {
             }else if(body.error){
                 callback('Unable to access',undefined)
             }else{
-                callback(undefined,'Temperatue: '+body.current.temperature+' Condition: '+body.current.weather_descriptions[0])
+                callback(undefined,'Location: '+body.location.name+ ' /FeelsLike: '+body.current.feelslike +' Temperatue: '+body.current.temperature+' Condition: '+body.current.weather_descriptions[0])
             }
         })
 }
