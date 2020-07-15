@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast.js')
 const { ESRCH } = require('constants')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(express.static(path.join(__dirname , '../public')))
 const viewsPath = path.join(__dirname , '../templetes/views')
@@ -91,6 +92,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is running.')
 })
